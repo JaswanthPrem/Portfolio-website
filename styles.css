@@ -1,0 +1,1161 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  font-family: Arial, sans-serif;
+  color: #333;
+  line-height: 1.6;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  transition: background 0.3s, color 0.3s;
+  overflow: hidden; /* Prevents unwanted scrolling */
+}
+
+/* Dark Mode */
+.dark-mode {
+  background: #111;
+  color: white;
+}
+
+/* Header - Fixed */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 10%;
+  background: white;
+  border-bottom: 1px solid #ccc;
+  z-index: 1000;
+  transition: background 0.3s, color 0.3s;
+}
+
+.dark-mode header {
+  background: #222;
+}
+
+/* Logo */
+header .logo {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.hello-text {
+  color: rgb(0, 187, 250);
+}
+
+/* Base styles */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.nav-links {
+  display: flex;
+  gap: 15px;
+}
+
+/* Menu Icon (Three Dots) */
+.menu-icon {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+  color: #333;
+  background: none;
+  border: none;
+  transition: color 0.3s ease-in-out;
+}
+
+/* Dark Mode Support for Menu Icon */
+.dark-mode .menu-icon {
+  color: white;
+}
+
+/* Responsive Navigation */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: white;
+    flex-direction: column;
+    width: 200px;
+    text-align: left;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .nav-links a {
+    display: block;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    color: #333;
+    transition: background 0.3s, color 0.3s;
+  }
+
+  .menu-icon {
+    display: block;
+  }
+
+  /* Dark Mode Support for Menu */
+  .dark-mode .nav-links {
+    background: #222;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
+  }
+
+  .dark-mode .nav-links a {
+    color: white;
+    border-bottom: 1px solid #444;
+  }
+
+  /* Show menu when active */
+  .nav-links.active {
+    display: flex;
+  }
+}
+
+
+.dark-mode nav a {
+  color: white;
+}
+
+/* Dark Mode Button */
+.dark-mode-button {
+  background: none;
+  border: 1px solid #333;
+  padding: 5px 10px;
+  cursor: pointer;
+  color: black;
+}
+
+.dark-mode .dark-mode-button {
+  color: white;
+  border-color: white;
+}
+
+/* Main Content - Scrollable */
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 100px 10% 80px; /* Adjusted for fixed header/footer */
+  overflow-y: auto;
+  width: 100%;
+}
+
+/* Profile Image */
+main img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 5px solid rgb(0, 187, 250);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Typing Effect */
+.typing-effect {
+  font-size: 2rem;
+  display: inline-block;
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.white-text {
+  color: black;
+}
+
+.blue-text {
+  color: rgb(0, 187, 250);
+}
+
+.cursor {
+  display: inline-block;
+  background-color: black;
+  width: 2px;
+  animation: blink 0.7s steps(1) infinite;
+}
+
+.dark-mode .white-text {
+  color: white;
+}
+
+.dark-mode .cursor {
+  background-color: white;
+}
+
+/* Centering Buttons */
+.buttons {
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  gap: 20px;
+  margin-top: 20px;
+}
+
+/* Ensure Buttons Stay Centered */
+.buttons a {
+  text-decoration: none;
+  padding: 15px 25px;
+  border-radius: 50%;
+  color: #fff;
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+  width: 120px; /* Adjusted for better spacing */
+  height: 120px; /* Adjusted for better spacing */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Button Colors */
+.buttons .experience {
+  background-color: #fbb034;
+}
+
+.buttons .projects {
+  background-color: #e74c3c;
+}
+
+.buttons .contact {
+  background-color: #00cec9;
+}
+.buttons .education {
+  background-color: #00d67d;
+  align-items: center;
+}
+
+
+/* About Section */
+.about-section {
+  text-align: center;
+  padding: 40px 10%;
+}
+
+.about-section h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.about-section p {
+  font-size: 1.2rem;
+  color: #555;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.dark-mode .about-section p {
+  color: #ccc;
+}
+
+/* Interests Section */
+.interests-section {
+  text-align: center;
+  padding: 40px 10%;
+}
+
+.interests-section h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.interests-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 20px;
+  justify-content: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.interest {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #f5f5f5;
+  padding: 15px;
+  border-radius: 10px;
+  transition: transform 0.3s, background 0.3s;
+}
+
+.interest img {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 10px;
+}
+
+.interest span {
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.interest:hover {
+  transform: scale(1.05);
+  background: #e0e0e0;
+}
+
+.dark-mode .interest {
+  background: #222;
+}
+
+.dark-mode .interest:hover {
+  background: #333;
+}
+
+.dark-mode .interest span {
+  color: white;
+}
+
+/* Interests Grid */
+.interests-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Default: 4 columns */
+  gap: 20px;
+  justify-content: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Responsive for tablets (3 columns) */
+@media (max-width: 1024px) {
+  .interests-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Responsive for smaller screens (2 columns) */
+@media (max-width: 768px) {
+  .interests-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns per row */
+  }
+}
+
+/* Responsive for extra small screens (1 column) */
+@media (max-width: 480px) {
+  .interests-grid {
+    grid-template-columns: repeat(2, 1fr); /* Still keep 2 columns */
+  }
+}
+
+/* Interest Card Styling */
+.interest {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #f5f5f5;
+  padding: 15px;
+  border-radius: 10px;
+  transition: transform 0.3s, background 0.3s;
+}
+
+.interest img {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 10px;
+}
+
+.interest span {
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+/* Hover Effect */
+.interest:hover {
+  transform: scale(1.05);
+  background: #e0e0e0;
+}
+
+/* Dark Mode Support */
+.dark-mode .interest {
+  background: #222;
+}
+
+.dark-mode .interest:hover {
+  background: #333;
+}
+
+.dark-mode .interest span {
+  color: white;
+}
+
+/* Education Section */
+.education-section {
+  text-align: left;
+  padding: 40px 10%;
+  background: #f5f5f5; /* Light Mode */
+  color: #333;
+  border-radius: 10px;
+  margin-top: 20px;
+  transition: background 0.3s, color 0.3s;
+}
+
+/* Dark Mode Styling */
+.dark-mode .education-section {
+  background: #222;
+  color: white;
+}
+
+/* Flexbox Layout */
+.education-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+/* Text Content */
+.education-content {
+  max-width: 60%;
+}
+
+.edu-title {
+  color: rgb(0, 187, 250);
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+/* List & Paragraph Styling */
+.education-content p,
+.education-content ul {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+}
+
+.education-content ul {
+  padding-left: 20px;
+}
+
+.education-content li {
+  list-style-type: disc;
+}
+
+/* Dark Mode Text Adjustments */
+.dark-mode .education-content p,
+.dark-mode .education-content li {
+  color: #ddd;
+}
+
+/* Logo Styling - Square Image */
+.education-logo img {
+  width: 200px;  /* Fixed size */
+  height: 200px; /* Maintain square shape */
+  object-fit: cover; /* Crop & fit within the square */
+  border-radius: 10px; /* Optional rounded corners */
+  border: 3px solid #ddd; /* Light Mode Border */
+  transition: all 0.3s ease-in-out;
+}
+
+/* Dark Mode Logo */
+.dark-mode .education-logo img {
+  border: 3px solid #444;
+  filter: brightness(90%);
+}
+
+/* Hover Effect */
+.education-logo img:hover {
+  transform: scale(1.05);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+  .education-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .education-content {
+    max-width: 100%;
+  }
+
+  .education-logo {
+    margin-top: 20px;
+  }
+
+  .education-logo img {
+    width: 150px; /* Adjusted for medium screens */
+    height: 150px;
+  }
+}
+
+@media (max-width: 768px) {
+  .education-section {
+    padding: 30px 5%;
+  }
+
+  .edu-title {
+    font-size: 1.8rem;
+  }
+
+  .education-content p,
+  .education-content li {
+    font-size: 1rem;
+  }
+
+  .education-logo img {
+    width: 120px; /* Smaller image for mobile */
+    height: 120px;
+  }
+}
+
+@media (max-width: 480px) {
+  .education-container {
+    flex-direction: column;
+  }
+
+  .edu-title {
+    font-size: 1.6rem;
+  }
+
+  .education-content p,
+  .education-content li {
+    font-size: 0.9rem;
+  }
+
+  .education-logo img {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+
+/*skills*/
+
+
+.skills-section {
+  text-align: center;
+  padding: 40px 10%;
+}
+
+.skills-section h2, .skills-section h3 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 20px;
+  justify-content: center;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.skill {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #f5f5f5;
+  padding: 15px;
+  border-radius: 10px;
+  transition: transform 0.3s, background 0.3s;
+}
+
+.skill img {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 10px;
+}
+
+.skill span {
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.skill:hover {
+  transform: scale(1.05);
+  background: #e0e0e0;
+}
+
+.dark-mode .skill {
+  background: #222;
+}
+
+.dark-mode .skill:hover {
+  background: #333;
+}
+
+.dark-mode .skill span {
+  color: white;
+}
+
+
+/* Responsive for Tablets (max-width: 1024px) */
+@media (max-width: 1024px) {
+  .skills-grid {
+    grid-template-columns: repeat(3, 1fr); /* 3 columns for tablets */
+  }
+}
+
+/* Responsive for Mobile (max-width: 768px) */
+@media (max-width: 768px) {
+  /* Languages & Databases (6 items: 2,2) (2,2) (2,2) */
+  .languages-databases .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Libraries (10 items: 2,2) (2,2) (2,2) (2,2) (2,2) */
+  .libraries .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Other Tools (6 items: 2,2) (2,2) (2,2) */
+  .other-tools .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Responsive for Extra Small Screens (max-width: 480px) */
+@media (max-width: 480px) {
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr); /* Ensures 2 columns on very small screens */
+  }
+}
+
+
+/* Projects Section */
+.projects-section {
+  text-align: center;
+  padding: 40px 10%;
+  background: white; /* Light Mode */
+  color: #333;
+  border-radius: 10px;
+  margin-top: 20px;
+  transition: background 0.3s, color 0.3s;
+}
+
+/* Dark Mode Styling */
+.dark-mode .projects-section {
+  background: #222;
+  color: white;
+}
+
+/* Grid Layout */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  justify-content: center;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Project Cards */
+.project-card {
+  background: #f5f5f5;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  transition: transform 0.3s, background 0.3s;
+}
+
+.project-card img {
+  width: 290px;  /* Square image */
+  height: 150px;
+  object-fit: cover;
+  border-radius: 10px; /* Slight rounding */
+  border: 3px solid #ddd;
+  align-items: center;
+}
+
+.project-card h3 {
+  margin-top: 15px;
+  font-size: 1.2rem;
+  color: rgb(0, 187, 250);
+}
+
+.project-card p {
+  font-size: 1rem;
+  color: #555;
+  margin-top: 10px;
+}
+
+/* GitHub Button */
+.github-button {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: white;
+  background: #24292e;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background 0.3s ease-in-out;
+}
+
+.github-button:hover {
+  background: #333;
+}
+
+/* Dark Mode Adjustments */
+.dark-mode .project-card {
+  background: #222;
+  color: white;
+  border: 1px solid #444;
+}
+
+.dark-mode .project-card p {
+  color: #ddd;
+}
+
+.dark-mode .project-card:hover {
+  background: #333;
+}
+
+.dark-mode .github-button {
+  background: #
+}
+
+/* Responsive for Mobile (≤768px) */
+@media (max-width: 768px) {
+ 
+  /* Projects Section (2x2 Grid for Mobile) */
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr); /* 2 columns */
+    gap: 20px;
+    justify-content: center;
+  }
+}
+
+/* Experience Section */
+.experience-section {
+  text-align: left;
+  padding: 40px 10%;
+  background: white; /* Light Mode */
+  color: #333;
+  border-radius: 10px;
+  margin-top: 20px;
+  transition: background 0.3s, color 0.3s;
+}
+
+/* Dark Mode Styling */
+.dark-mode .experience-section {
+  background: #222;
+  color: white;
+}
+
+/* Flexbox for Layout */
+.experience-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column; /* Stack items vertically */
+  gap: 20px;
+}
+
+/* Individual Experience Cards */
+.experience-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #f5f5f5;
+  padding: 20px;
+  border-radius: 10px;
+  width: 100%;
+  border: 3px solid #ddd; /* Light Mode Border */
+  transition: transform 0.3s, background 0.3s, border 0.3s;
+}
+
+/* Dark Mode Card Styling */
+.dark-mode .experience-card {
+  border: 3px solid #444;
+  background: #222;
+  color: white;
+}
+
+/* Experience Content */
+.experience-content {
+  max-width: 60%;
+}
+
+.exp-title {
+  color: rgb(0, 187, 250);
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+/* List & Paragraphs */
+.experience-content p {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  color: #555;
+}
+
+.dark-mode .experience-content p {
+  color: #ddd;
+}
+
+/* Logo Styling - Square Image */
+.experience-logo img {
+  width: 200px;  /* Fixed square size */
+  height: 200px; /* Ensure square aspect ratio */
+  object-fit: cover; /* Crop & fit within the square */
+  border-radius: 10px; /* Optional rounded corners */
+  border: 3px solid #ddd; /* Light Mode Border */
+  transition: all 0.3s ease-in-out;
+}
+
+/* Dark Mode Logo */
+.dark-mode .experience-logo img {
+  border: 3px solid #444; /* Dark Mode Border */
+  filter: brightness(90%); /* Adjust brightness in dark mode */
+}
+
+/* Hover Effects */
+.experience-card:hover {
+  transform: scale(1.02);
+  background: #e0e0e0;
+  border-color: rgb(0, 187, 250); /* Highlight border on hover */
+}
+
+/* Dark Mode Hover Effects */
+.dark-mode .experience-card:hover {
+  background: #333;
+  border-color: rgb(0, 187, 250);
+}
+
+/* Responsive for Mobile (≤768px) */
+@media (max-width: 768px) {
+  /* Experience Section (2x2 Grid for Mobile) */
+  .experience-container {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr); /* 2 columns */
+    gap: 20px;
+    justify-content: center;
+  }
+
+  /* Ensure each experience card stacks image on top */
+  .experience-card {
+    display: flex;
+    flex-direction: column; /* Stack image on top */
+    align-items: center;
+    text-align: center;
+    background: #f5f5f5;
+    padding: 20px;
+    border-radius: 10px;
+    border: 3px solid #ddd;
+    transition: transform 0.3s, background 0.3s, border 0.3s;
+  }
+
+  /* Experience Logo - Centered and Adjusted */
+  .experience-logo img {
+    width: 100px; /* Adjust size for mobile */
+    height: 100px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 3px solid #ddd;
+    margin-bottom: 10px; /* Adds space between image and text */
+  }
+
+  /* Experience Content - Text Below Image */
+  .experience-content {
+    text-align: center;
+  }
+
+  /* Dark Mode Adjustments */
+  .dark-mode .experience-card {
+    background: #222;
+    border: 3px solid #444;
+    color: white;
+  }
+
+  .dark-mode .experience-logo img {
+    border: 3px solid #444;
+    filter: brightness(90%);
+  }
+}
+
+
+
+/* Contact Section */
+.contact-section {
+  text-align: center;
+  padding: 80px 10%;
+  background: linear-gradient(to bottom, #f4f4f4, #fdfdfd); /* Light peach-pink gradient */
+  color: #5a189a; /* Purple Text */
+  border-radius: 10px;
+  transition: background 0.3s, color 0.3s;
+}
+
+/* Dark Mode Styling */
+.dark-mode .contact-section {
+  background: linear-gradient(to bottom, #222, #333);
+  color: white;
+}
+
+/* Title Styling */
+.contact-title {
+  font-size: 2.8rem;
+  font-weight: bold;
+  text-align: left;
+  margin-bottom: 20px;
+  position: relative;
+  display: inline-block;
+}
+
+/* Underline Effect */
+.contact-title::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: #5a189a; /* Purple underline */
+  margin-top: 5px;
+}
+
+.experience-section {
+  margin-bottom: 80px; /* Increased bottom margin */
+}
+
+/* Form Styling */
+#contact-form {
+  max-width: 700px; /* Wider form */
+  margin: 0 auto;
+  padding: 40px;
+  border-radius: 12px;
+}
+
+/* Form Groups */
+.form-group {
+  margin-bottom: 25px; /* Increased spacing between fields */
+  text-align: left;
+}
+
+/* Input Fields & Textarea */
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 18px; /* Bigger input size */
+  border: none;
+  border-radius: 30px; /* Rounded edges */
+  font-size: 1.2rem;
+  background: white;
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.1);
+  outline: none;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Placeholder Styling */
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: #999;
+  font-size: 1rem;
+}
+
+/* Focus Effect */
+.form-group input:focus,
+.form-group textarea:focus {
+  box-shadow: 0px 4px 15px rgba(90, 24, 154, 0.3); /* Purple glow */
+}
+
+/* Submit Button */
+.submit-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 18px; /* Bigger button */
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: white;
+  background: linear-gradient(to right, #4275db, #1147b3); /* Red to Orange Gradient */
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Arrow Animation */
+.arrow {
+  margin-left: 10px;
+  font-size: 1.5rem;
+  transition: transform 0.3s;
+}
+
+/* Hover Effects */
+.submit-button:hover {
+  background: linear-gradient(to right, #d62839, #ff6347);
+}
+
+.submit-button:hover .arrow {
+  transform: translateX(7px);
+}
+
+/* Dark Mode Adjustments */
+.dark-mode .form-group input,
+.dark-mode .form-group textarea {
+  background: #222;
+  color: white;
+}
+
+.dark-mode .form-group input::placeholder,
+.dark-mode .form-group textarea::placeholder {
+  color: #ccc;
+}
+
+.dark-mode .submit-button {
+  background: linear-gradient(to right, #7209b7, #560bad);
+}
+
+
+
+/* Footer - Fixed */
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 10%;
+  background: #f9f9f9;
+  border-top: 1px solid #ccc;
+  z-index: 1000;
+}
+
+/* Dark Mode */
+.dark-mode footer {
+  background: #222;
+  color: white;
+  border-top: 1px solid #444;
+}
+
+/* Footer Contact Info */
+footer .contact-info {
+  font-size: 14px;
+  color: #333;
+}
+
+.dark-mode footer .contact-info {
+  color: white;
+}
+
+/* Footer Social Links */
+footer .social-links {
+  display: flex;
+  gap: 15px;
+}
+
+footer .social-links a {
+  display: inline-block;
+}
+
+footer .social-links img {
+  width: 30px;
+  height: 30px;
+  transition: transform 0.3s ease;
+}
+
+footer .social-links img:hover {
+  transform: scale(1.2);
+}
+
+/* Ensuring sections have proper spacing */
+section {
+  padding: 80px 0; /* Ensures spacing between all sections */
+}
+
+/* Pushes content above the footer so it doesn't overlap */
+body {
+  padding-bottom: 80px; /* Adjust based on footer height */
+}
+
+  section {
+    padding: 80px 0; /* Ensures spacing between all sections */
+  }
+
+  /* Responsive for Mobile (≤768px) */
+@media (max-width: 768px) {
+  /* Contact Section - Adjust padding for better spacing */
+  .contact-section {
+    padding: 40px 5%;
+    text-align: center;
+  }
+
+  /* Contact Form - Full Width */
+  #contact-form {
+    width: 100%;
+    padding: 20px;
+  }
+
+  /* Form Fields - Adjust Sizes */
+  .form-group input,
+  .form-group textarea {
+    width: 100%;
+    padding: 14px;
+    font-size: 1rem;
+    border-radius: 8px;
+  }
+
+  /* Contact Title - Smaller Font */
+  .contact-title {
+    font-size: 2rem;
+  }
+
+  /* Submit Button - Full Width */
+  .submit-button {
+    width: 100%;
+    font-size: 1.2rem;
+  }
+
+  /* Contact Info - Stack for better readability */
+  .contact-info {
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  /* Social Links - Centered */
+  .social-links {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 15px;
+  }
+}
+
+/* Responsive for Mobile (≤768px) */
+@media (max-width: 768px) {
+  /* Footer Section - Stack Items */
+  footer {
+    flex-direction: column; /* Stack items */
+    text-align: center;
+    padding: 20px 5%;
+  }
+
+  /* Contact Info - Center align */
+  .contact-info {
+    margin-bottom: 10px;
+  }
+
+  /* Social Links - Center and add spacing */
+  .social-links {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 10px;
+  }
+
+  .social-links a img {
+    width: 25px; /* Reduce icon size */
+    height: 25px;
+  }
+}
